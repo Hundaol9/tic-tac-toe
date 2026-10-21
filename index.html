@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <h1>Tic Tac Toe</h1>
+    <p>A little game between friends</p>
+    </header>
+
+
+<main>
+    <section>
+        <h2>Let's play</h2>
+        <p id="game-status" aria-live="polite">
+            Player X's turn</p>
+
+<div id="game-board"  aria-label="Tic Tac Toe Board">
+    <button class="cell" data-cell-index="0" aria-label="Cell 0"></button>
+    <button class="cell" data-cell-index="1" aria-label="Cell 1"></button>    
+    <button class="cell" data-cell-index="2" aria-label="Cell 2"></button>
+    <button class="cell" data-cell-index="3" aria-label="Cell 3"></button>
+    <button class="cell" data-cell-index="4" aria-label="Cell 4"></button>
+    <button class="cell" data-cell-index="5" aria-label="Cell 5"></button>
+    <button class="cell" data-cell-index="6" aria-label="Cell 6"></button>
+    <button class="cell" data-cell-index="7" aria-label="Cell 7"></button>
+    <button class="cell" data-cell-index="8" aria-label="Cell 8"></button>
+    <button class="cell" data-cell-index="9" aria-label="Cell 9"></button>
+</div>
+</section>
+
+<section id="ScoreBoard">
+    <h2>Score Board</h2>
+    <div class="score">
+        <p>
+        <span id="player-x-name">Player X </span>
+       <span id="player-x-score">0</span>
+        </p>
+    </div>
+
+    <div class="score">
+        <p>
+             <span id="player-o-name">Player O </span>
+       <span id="player-o-score">0</span>
+        </p>
+    </div>
+    
+
+        <button id="reset-button">Reset Game</button>
+
+
+</div>
+
+    </section>
+</main>
+</body>
+</html>
