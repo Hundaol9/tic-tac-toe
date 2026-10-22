@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TIC TAC TOE</title>
 </head>
 <body>
     <header>
@@ -19,20 +19,19 @@
             Player X's turn</p>
 
 <div id="game-board"  aria-label="Tic Tac Toe Board">
-    <button class="cell" data-cell-index="0" aria-label="Cell 0"></button>
-    <button class="cell" data-cell-index="1" aria-label="Cell 1"></button>    
-    <button class="cell" data-cell-index="2" aria-label="Cell 2"></button>
-    <button class="cell" data-cell-index="3" aria-label="Cell 3"></button>
-    <button class="cell" data-cell-index="4" aria-label="Cell 4"></button>
-    <button class="cell" data-cell-index="5" aria-label="Cell 5"></button>
-    <button class="cell" data-cell-index="6" aria-label="Cell 6"></button>
-    <button class="cell" data-cell-index="7" aria-label="Cell 7"></button>
-    <button class="cell" data-cell-index="8" aria-label="Cell 8"></button>
-    <button class="cell" data-cell-index="9" aria-label="Cell 9"></button>
+    <button type="button" class="cell" data-cell-index="0" aria-label="Cell 0"></button>
+    <button type="button" class="cell" data-cell-index="1" aria-label="Cell 1"></button>    
+    <button type="button" class="cell" data-cell-index="2" aria-label="Cell 2"></button>
+    <button type="button" class="cell" data-cell-index="3" aria-label="Cell 3"></button>
+    <button type="button" class="cell" data-cell-index="4" aria-label="Cell 4"></button>
+    <button type="button" class="cell" data-cell-index="5" aria-label="Cell 5"></button>
+    <button type="button" class="cell" data-cell-index="6" aria-label="Cell 6"></button>
+    <button type="button" class="cell" data-cell-index="7" aria-label="Cell 7"></button>
+    <button type="button" class="cell" data-cell-index="8" aria-label="Cell 8"></button>
 </div>
 </section>
 
-<section id="ScoreBoard">
+<section id="scoreboard">
     <h2>Score Board</h2>
     <div class="score">
         <p>
@@ -47,14 +46,25 @@
        <span id="player-o-score">0</span>
         </p>
     </div>
-    
+</section>
 
-        <button id="reset-button">Reset Game</button>
+<section id="player-setup">
+    <h2>Meet the Players</h2>
+        <label for="player-x-name">Player X:</label>
+        <input type="text" id="player-x-name" placeholder="Enter Player X's name">
 
-
-</div>
+        <label for="player-o-name">Player O:</label>
+        <input type="text" id="player-o-name" placeholder="Enter Player O's name">
 
     </section>
+
+<section id="reset-section">
+  <button id="reset-button">Reset Game</button>
+    </section>
+
 </main>
+ <footer>
+        <p>Made with creativity and a little competition.</p>
+    </footer>
 </body>
 </html>
