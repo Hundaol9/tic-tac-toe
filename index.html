@@ -4,29 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIC TAC TOE</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Leckerli+One&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Glitch+Pop&family=Story+Script&display=swap" rel="stylesheet">
+    
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Leckerli+One&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oxanium:wght@200..800&family=Rubik+Glitch+Pop&family=Story+Script&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
     
 </head>
 <body>
-    <header>
+
+
+<header class="top-bar">
     <h1>Tic Tac Toe</h1>
     <p>A little game between friends</p>
+     <button type="button" id="menu-button" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="timer-container">
+        <span class="timer-icon">◷</span>
+        <p id="game-timer">00:00</p>
+    </div>
     </header>
 
 
 <main>
-
-
     <section id="game-mode">
-        <h2>Choose Gme Mode</h2>
-        <label for="game-mode-select">Select Game Mode:</label>
+        <h2>Choose Game Mode</h2>
+        <label for="mode">Select Game Mode:</label>
         <select id="mode">
             <option value="two-player">Two Players</option>
             <option value="computer">Play Against Computer</option>
         </select>
+  
     </section>
-    <section>
-        <h2>Let's play</h2>
+
+    <section id="player-setup">
+    <h2>Meet the Players</h2>
+    <div class="player-input">
+        <label for="player-x">Player X:</label>
+        <input type="text" id="player-x" placeholder="Enter Player X's name">
+
+        <label for="player-o">Player O:</label>
+        <input type="text" id="player-o" placeholder="Enter Player O's name">
+</div>
+    </section>
+
+
+
+    <section id="game-arena">
+         <div id="players-column">
+    <div id="player-x-side" class="side-panel">
+    
+            <div class="player-label">
+                <span class="turn-indicator">▷</span>
+                <h2 id="player-x-name">Player X</h2>
+            </div>
+
+            <div class="player-symbol">X</div>
+            <p class="side-score">
+                Score: <span id="player-x-score">0</span>
+            </p>
+        </div>
+   
+
+    <div id="player-o-side" class="side-panel">
+    
+            <div class="player-label">
+                <span class="turn-indicator">▷</span>
+                <h2 id="player-o-name">Player O</h2>
+            </div>
+
+            <div class="player-symbol">O</div>
+            <p class="side-score">
+                Score: <span id="player-o-score">0</span>
+            </p>
+        </div>
+        
+    
+    </div>
+
+
+
+ <section id="game-section">
+        <button type="button" id="play-button">Let's play</button>
         <p id="game-status" aria-live="polite">
             Player X's turn</p>
 
@@ -41,43 +109,48 @@
     <button type="button" class="cell" data-cell-index="8" aria-label="Cell 8"></button>
     <button type="button" class="cell" data-cell-index="9" aria-label="Cell 9"></button>
 </div>
-</section>
+<div id="game-controls">
 
-<section id="scoreboard">
-    <h2>Score Board</h2>
-    <div class="score">
-        <p>
-        <span id="player-x-name">Player X </span>
-       <span id="player-x-score">0</span>
-        </p>
-    </div>
+    <button type="button" id="restart-button" aria-label="Another round">
+    ↻
+</button>
 
-    <div class="score">
-        <p>
-             <span id="player-o-name">Player O </span>
-       <span id="player-o-score">0</span>
-        </p>
-    </div>
-    <div class="score">
-    <p>Draws: <span id="draw-score">0</span></p>
-   </div>
+    <button type="button" id="home-button" aria-label="Go to home">
+        ⌂
+    </button>
+
+</div>
 
 </section>
 
-<section id="player-setup">
-    <h2>Meet the Players</h2>
-        <label for="player-x-name">Player X:</label>
-        <input type="text" id="player-x" placeholder="Enter Player X's name">
+<section class="game-life">   
+<div id="stage-section">
+     <h2>
+        Stage: <span id="stage-number">1</span>/3
+      </h2>
 
-        <label for="player-o-name">Player O:</label>
-        <input type="text" id="player-o" placeholder="Enter Player O's name">
+      <div id="lives-container" aria-label="Three lives remaining">
+        <span class="heart">♡</span> x3
+      </div>
 
+</div>
+
+</section>
     </section>
 
-<section id="reset-section">
-  <button type="button" id="reset-button">Reset Game</button>
-    <button type="button" id="restart-button">restart Game</button>
+<section id="result-section">
+    <h2 id="result-title">Player X Wins!</h2>
+    <p id="result-message">
+        Congratulations!
+    </p>
 </section>
+
+
+
+
+
+
+
 
 </main>
  <footer>
